@@ -1,4 +1,4 @@
-export type NewCotationProps = {
+export type NewQuotationProps = {
   isOpen: boolean;
   onRequestClose: () => void;
 };

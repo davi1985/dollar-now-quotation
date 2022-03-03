@@ -1,4 +1,4 @@
-export type Cotation = {
+export type Quotation = {
   USDBRL: {
     ask?: number;
   };

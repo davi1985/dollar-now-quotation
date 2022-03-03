@@ -1,27 +1,17 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
-import { currenyBRL, customFormatCurrency } from '../../utils/utils';
-import { NewCotationProps } from './types';
+import { ToastContainer } from 'react-toastify';
 
-import * as S from './styles';
+import { customFormatCurrency } from '../../utils/utils';
+import { NewQuotationProps } from './types';
+
 import { api } from '../../services/api';
-import { toast, ToastContainer } from 'react-toastify';
 import { useCustomToast } from '../../hooks/useCustomToast';
 import { Button } from '../Button';
 
-export type EURBRL = {
-  EURBRL: {
-    ask: string;
-  };
-};
+import * as S from './styles';
 
-export type USDBRL = {
-  USDBRL: {
-    ask: string;
-  };
-};
-
-export const NewCotation = ({ isOpen, onRequestClose }: NewCotationProps) => {
+export const NewQuotation = ({ isOpen, onRequestClose }: NewQuotationProps) => {
   const [currencySelected, setCurrencySelected] = useState('');
   const [value, setValue] = useState<number>(0);
   const [result, setResult] = useState<number>(0);

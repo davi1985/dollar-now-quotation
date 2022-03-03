@@ -1,28 +1,28 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
 import { Card } from '../Card';
-import { Cotation } from './types';
+import { Quotation } from './types';
 
 export const Cards = () => {
-  const [cotationDaily, setCotationDaily] = useState<Cotation | null>(
-    {} as Cotation,
+  const [quotationDaily, setQuotationDaily] = useState<Quotation | null>(
+    {} as Quotation,
   );
 
   useEffect(() => {
     const getCotations = async () => {
-      const response = await api.get<Cotation>('USD-BRL,EUR-BRL');
+      const response = await api.get<Quotation>('USD-BRL,EUR-BRL');
       const data = await response.data;
 
-      setCotationDaily(data);
+      setQuotationDaily(data);
     };
 
     getCotations();
   }, []);
   return (
     <>
-      <Card currency="dólar" value={cotationDaily?.USDBRL?.ask as number} />
+      <Card currency="dólar" value={quotationDaily?.USDBRL?.ask as number} />
 
-      <Card currency="euro" value={cotationDaily?.EURBRL?.ask as number} />
+      <Card currency="euro" value={quotationDaily?.EURBRL?.ask as number} />
     </>
   );
 };

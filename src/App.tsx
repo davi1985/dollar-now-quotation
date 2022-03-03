@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Modal from 'react-modal';
+
 import { Button } from './components/Button';
-import { Card } from './components/Card';
 import { Cards } from './components/Cards';
 import { Header } from './components/Header';
-import { NewCotation } from './components/NewCotation';
-import { api } from './services/api';
+import { NewQuotation } from './components/NewQuotation';
 
 import { Container } from './styles/global';
 
@@ -30,7 +29,7 @@ export const App = () => {
 
       <Button text="Calcular converção" onClick={openModal}></Button>
 
-      <NewCotation isOpen={modalIsOpen} onRequestClose={closeModal} />
+      <NewQuotation isOpen={modalIsOpen} onRequestClose={closeModal} />
     </Container>
   );
 };
