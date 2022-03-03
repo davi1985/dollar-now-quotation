@@ -21,7 +21,11 @@ Live Dollar and Euro quotation;
 
 <br/>
 
-<img src='./screenshots/modal.png' width='100%'>
+<img src='./screenshots/modal-1.png' width='100%'>
+
+<br/>
+
+<img src='./screenshots/modal-2.png' width='100%'>
 
 ## :rocket: Technologies
 
