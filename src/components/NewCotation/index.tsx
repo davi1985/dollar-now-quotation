@@ -7,6 +7,7 @@ import * as S from './styles';
 import { api } from '../../services/api';
 import { toast, ToastContainer } from 'react-toastify';
 import { useCustomToast } from '../../hooks/useCustomToast';
+import { Button } from '../Button';
 
 export type EURBRL = {
   EURBRL: {
@@ -93,9 +94,9 @@ export const NewCotation = ({ isOpen, onRequestClose }: NewCotationProps) => {
           />
 
           {!result ? (
-            <button onClick={handleCalculate}>Calcular</button>
+            <Button text="Calcular" onClick={handleCalculate} />
           ) : (
-            <button onClick={handleClean}>Calcular Novamente</button>
+            <Button text="Começar de novo" onClick={handleClean} />
           )}
 
           {!!result && (

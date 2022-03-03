@@ -1,5 +1,5 @@
 export const customFormatCurrency = (currency: string, value: number) => {
-  return new Intl.NumberFormat(currency === 'USD' ? 'USD' : 'EUR', {
+  return new Intl.NumberFormat(currency, {
     style: 'currency',
     currency: currency.toUpperCase(),
   }).format(value);

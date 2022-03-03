@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
+import { Button } from './components/Button';
 import { Card } from './components/Card';
+import { Cards } from './components/Cards';
 import { Header } from './components/Header';
 import { NewCotation } from './components/NewCotation';
 import { api } from './services/api';
@@ -9,20 +11,8 @@ import { Container } from './styles/global';
 
 Modal.setAppElement('#root');
 
-type Cotation = {
-  USDBRL: {
-    ask?: number;
-  };
-  EURBRL: {
-    ask?: number;
-  };
-};
-
 export const App = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [cotationDaily, setCotationDaily] = useState<Cotation | null>(
-    {} as Cotation,
-  );
 
   const openModal = () => {
     setIsOpen(true);
@@ -32,25 +22,13 @@ export const App = () => {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    const getCotations = async () => {
-      const response = await api.get<Cotation>('USD-BRL,EUR-BRL');
-      const data = await response.data;
-
-      setCotationDaily(data);
-    };
-
-    getCotations();
-  }, []);
-
   return (
     <Container>
       <Header />
 
-      <Card currency="dólar" value={cotationDaily?.USDBRL?.ask as number} />
-      <Card currency="euro" value={cotationDaily?.EURBRL?.ask as number} />
+      <Cards />
 
-      <button onClick={openModal}>Calcular converção</button>
+      <Button text="Calcular converção" onClick={openModal}></Button>
 
       <NewCotation isOpen={modalIsOpen} onRequestClose={closeModal} />
     </Container>
