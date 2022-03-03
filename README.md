@@ -1,4 +1,4 @@
-<h1 align="center">Dollar and Euro Cotation</h1>
+<h1 align="center">Dollar and Euro Quotation</h1>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0;
