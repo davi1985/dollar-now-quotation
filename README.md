@@ -29,9 +29,9 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Styled Componets](https://www.typescriptlang.org/)
-- [Vite](https://www.typescriptlang.org/)
-- [Axios](https://www.typescriptlang.org/)
+- [Styled Componets](https://styled-components.com/)
+- [Vite](https://vitejs.dev/)
+- [Axios](https://axios-http.com/)
 
 ## :white_check_mark: Requirements
 
