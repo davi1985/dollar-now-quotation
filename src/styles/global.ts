@@ -102,11 +102,15 @@ export const Container = styled.div`
     max-width: 320px;
 
     padding: 1rem 2rem;
-    background: var(--blue);
+    background: var(--green);
+    color: var(--text-dark);
+
     font-size: 1.2rem;
+    font-weight: bold;
+
     border: none;
 
-    margin-top: 3rem;
+    margin-top: 1rem;
     border-radius: 2rem;
     margin-left: auto;
 
