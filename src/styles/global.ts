@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     --text-dark:#231422;
     --red:#e52e4d;
     --green:#33cc95;
-    --blue: #5429cc;
+    --blue: #542999;
   }
 
   * {
@@ -47,11 +47,51 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 87.5%; //  14px
     }
   }
+
+  .react-modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .react-modal-content {
+    width: 100%;
+    max-width: 576px;
+    background: var(--background);
+    padding: 3rem;
+    position: relative;
+    border-radius: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .react-modal-content {
+      margin: 2rem;
+    }
+  }
+
+  .react-modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
+    transition: filter 0.3s;
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 `;
 
 export const Container = styled.div`
   max-width: 1220px;
   margin: 0 auto;
+  padding: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -66,7 +106,7 @@ export const Container = styled.div`
     font-size: 1.2rem;
     border: none;
 
-    margin-top: 2rem;
+    margin-top: 3rem;
     border-radius: 2rem;
     margin-left: auto;
 
@@ -75,10 +115,6 @@ export const Container = styled.div`
     &:hover {
       filter: brightness(0.9);
     }
-  }
-
-  @media (max-width: 768px) {
-    margin: 0 2rem;
   }
 
   @media (max-width: 550px) {

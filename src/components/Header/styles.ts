@@ -16,7 +16,6 @@ export const Container = styled.div`
   }
 
   span {
-    margin-left: 0.8rem;
     color: var(--green);
   }
 
