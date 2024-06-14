@@ -33,7 +33,7 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Styled Componets](https://styled-components.com/)
+- [Styled Components](https://styled-components.com/)
 - [Vite](https://vitejs.dev/)
 - [Axios](https://axios-http.com/)
 
