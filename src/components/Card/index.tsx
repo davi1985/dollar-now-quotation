@@ -1,19 +1,21 @@
-import { currenyBRL } from '../../utils/utils';
+import { currentBRL } from '../../utils/utils';
 
 import { CardProps } from './types';
 
-import * as S from './styles';
+import { Container } from './styles';
 
-export const Card = ({ currency, value }: CardProps) => {
-  return (
-    <S.Card>
-      <S.Container>
+export const Card = ({ currency, value, isLoading }: CardProps) => (
+  <Container>
+    {isLoading ? (
+      <p>Carregando cotação! 👩‍💻</p>
+    ) : (
+      <>
         <h2>Cotação do {currency.toUpperCase()} hoje:</h2>
 
-        <span>{currenyBRL(value)}</span>
+        <span>{currentBRL(value)}</span>
 
         <small>Fonte: https://economia.awesomeapi.com.br</small>
-      </S.Container>
-    </S.Card>
-  );
-};
+      </>
+    )}
+  </Container>
+);
