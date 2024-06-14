@@ -1,28 +1,24 @@
-import { useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { useFetch } from '../../hooks/useFetch';
 import { Card } from '../Card';
-import { Quotation } from './types';
+import { Container } from './styles';
 
+const PARAMS = 'USD-BRL,EUR-BRL';
 export const Cards = () => {
-  const [quotationDaily, setQuotationDaily] = useState<Quotation | null>(
-    {} as Quotation,
-  );
+  const { data, loading } = useFetch(PARAMS);
 
-  useEffect(() => {
-    const getCotations = async () => {
-      const response = await api.get<Quotation>('USD-BRL,EUR-BRL');
-      const data = await response.data;
-
-      setQuotationDaily(data);
-    };
-
-    getCotations();
-  }, []);
   return (
-    <>
-      <Card currency="dólar" value={quotationDaily?.USDBRL?.ask as number} />
+    <Container>
+      <Card
+        currency="dólar"
+        value={data?.USDBRL?.ask as number}
+        isLoading={loading}
+      />
 
-      <Card currency="euro" value={quotationDaily?.EURBRL?.ask as number} />
-    </>
+      <Card
+        currency="euro"
+        value={data?.EURBRL?.ask as number}
+        isLoading={loading}
+      />
+    </Container>
   );
 };
