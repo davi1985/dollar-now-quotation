@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import { Button } from './components/Button';
 import { Cards } from './components/Cards';
 import { Header } from './components/Header';
-import { NewQuotation } from './components/NewQuotation';
+import { NewExchangeRate } from './components/NewExchangeRate';
 
 import { Container } from './styles/global';
 
@@ -27,9 +27,9 @@ export const App = () => {
 
       <Cards />
 
-      <Button text="Calcular converção" onClick={openModal}></Button>
+      <Button text="Calcular convenção" onClick={openModal} />
 
-      <NewQuotation isOpen={modalIsOpen} onRequestClose={closeModal} />
+      <NewExchangeRate isOpen={modalIsOpen} onRequestClose={closeModal} />
     </Container>
   );
 };
