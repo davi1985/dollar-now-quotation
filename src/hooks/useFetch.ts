@@ -14,7 +14,7 @@ export const useFetch = (params: string) => {
       try {
         setLoading(true);
         const { data } = await api.get(params);
-
+        console.log(data);
         setData(data);
         notify({ message: 'Cotação atualizada com sucesso!', type: 'success' });
       } catch (error) {

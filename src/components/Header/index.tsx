@@ -9,7 +9,7 @@ export const Header = () => {
           <span>Now</span>
         </h1>
 
-        <p>Veja a cotação do dia e calcule a converção desejada.</p>
+        <p>Veja a cotação do dia e calcule a convenção desejada.</p>
       </S.Container>
     </S.Header>
   );

@@ -1,4 +1,4 @@
-import Modal from 'react-modal';
+import ReactModal from 'react-modal';
 
 import { customFormatCurrency } from '../../utils/utils';
 import { NewExchangeRateProps } from './types';
@@ -23,10 +23,10 @@ export const NewExchangeRate = ({
   } = useNewExchangeRate();
 
   return (
-    <Modal
+    <ReactModal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      contentLabel="Example Modal"
+      contentLabel="New Exchange Rate"
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
@@ -35,7 +35,7 @@ export const NewExchangeRate = ({
 
         <S.Section>
           <select
-            name=""
+            aria-label="currencies"
             id=""
             value={currencySelected}
             onChange={handleSelectCurrency}
@@ -51,7 +51,7 @@ export const NewExchangeRate = ({
 
           <input
             type="number"
-            value={!amount ? 'Digite o valor para convenção.' : amount}
+            value={amount}
             onChange={handleAmount}
             placeholder="Digite o valor para convenção."
           />
@@ -67,6 +67,6 @@ export const NewExchangeRate = ({
           )}
         </S.Section>
       </S.Container>
-    </Modal>
+    </ReactModal>
   );
 };
