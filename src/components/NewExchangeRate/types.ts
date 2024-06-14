@@ -1,4 +1,4 @@
-export type NewQuotationProps = {
+export type NewExchangeRateProps = {
   isOpen: boolean;
   onRequestClose: () => void;
 };
