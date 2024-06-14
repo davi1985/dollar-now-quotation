@@ -92,6 +92,7 @@ export const Container = styled.div`
   max-width: 1220px;
   margin: 0 auto;
   padding: 2rem;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
