@@ -50,6 +50,5 @@ describe('useFetch', () => {
     expect(result.current.loading).toBe(true);
 
     rerender();
-    console.log(result);
   });
 });
