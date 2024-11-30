@@ -9,7 +9,6 @@ describe('NewExchangeRate component', () => {
       <NewExchangeRate isOpen onRequestClose={onRequestCloseMock} />,
     );
 
-    getByRole('dialog', { name: 'New Exchange Rate' });
     getByRole('heading', { name: 'Qual moeda você deseja converter ?' });
     getByRole('button', { name: 'Calcular' });
     getByPlaceholderText('Digite o valor para convenção.');

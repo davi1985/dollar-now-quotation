@@ -7,7 +7,7 @@ import { Button } from '../Button';
 
 import { Section, Container } from './styles';
 import { useNewExchangeRate } from './useNewExchangeRate';
-
+import { Modal } from '../Modal';
 export const NewExchangeRate = ({
   isOpen,
   onRequestClose,
@@ -23,13 +23,7 @@ export const NewExchangeRate = ({
   } = useNewExchangeRate();
 
   return (
-    <ReactModal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      contentLabel="New Exchange Rate"
-      overlayClassName="react-modal-overlay"
-      className="react-modal-content"
-    >
+    <Modal visibility={isOpen} onClose={onRequestClose}>
       <Container>
         <h2>Qual moeda você deseja converter ?</h2>
 
@@ -65,6 +59,6 @@ export const NewExchangeRate = ({
           {!!result && <span>Total: {currentBRL(result)}</span>}
         </Section>
       </Container>
-    </ReactModal>
+    </Modal>
   );
 };

@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  padding: 1rem;
   h2 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -65,6 +65,7 @@ export const Section = styled.section`
 
   input {
     margin-bottom: 10px;
+    background: #ddd;
   }
 
   input::placeholder {
