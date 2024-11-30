@@ -69,3 +69,16 @@ export const Footer = styled.footer`
     }
   }
 `;
+
+export const CloseBtn = styled.button`
+  border: none;
+  background: #fefefe;
+  width: 20px;
+  height: 20px;
+  color: #121214;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+`;

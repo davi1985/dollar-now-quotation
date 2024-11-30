@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { ReactPortal } from '../ReactPortal';
 
-import { Container, Overlay } from './styles';
+import { CloseBtn, Container, Overlay } from './styles';
 
 type ModalProps = {
   visibility: boolean;
@@ -10,12 +10,15 @@ type ModalProps = {
   children: ReactNode;
 };
 
-export const Modal = ({ visibility, children }: ModalProps) =>
+export const Modal = ({ visibility, children, onClose }: ModalProps) =>
   visibility ? (
     <ReactPortal containerId={'modal-root'}>
       <Overlay>
         <Container>
-          <div className="modal-body">{children}</div>
+          <div className="modal-body">
+            <CloseBtn onClick={onClose}>X</CloseBtn>
+            {children}
+          </div>
         </Container>
       </Overlay>
     </ReactPortal>
