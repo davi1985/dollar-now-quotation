@@ -34,7 +34,7 @@ export const useNewExchangeRate = () => {
     console.log(currencySelected);
     const currency = `${currencySelected}BRL`;
 
-    const result = amount / parseFloat(data[currency].ask);
+    const result = amount * parseFloat(data[currency].ask);
 
     setResult(result);
   };

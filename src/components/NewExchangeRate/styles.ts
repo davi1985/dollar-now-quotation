@@ -63,6 +63,10 @@ export const Section = styled.section`
     font-weight: 700;
   }
 
+  input {
+    margin-bottom: 10px;
+  }
+
   input::placeholder {
     font-weight: 400;
   }

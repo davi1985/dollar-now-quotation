@@ -1,11 +1,11 @@
 import ReactModal from 'react-modal';
 
-import { customFormatCurrency } from '../../utils/utils';
+import { currentBRL } from '../../utils/utils';
 import { NewExchangeRateProps } from './types';
 
 import { Button } from '../Button';
 
-import * as S from './styles';
+import { Section, Container } from './styles';
 import { useNewExchangeRate } from './useNewExchangeRate';
 
 export const NewExchangeRate = ({
@@ -30,10 +30,10 @@ export const NewExchangeRate = ({
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <S.Container>
+      <Container>
         <h2>Qual moeda você deseja converter ?</h2>
 
-        <S.Section>
+        <Section>
           <select
             aria-label="currencies"
             id=""
@@ -42,9 +42,9 @@ export const NewExchangeRate = ({
           >
             <option value="">Selecione</option>
             <option value="USD" defaultValue={'USD'}>
-              Real para Dólar
+              Dólar para Real
             </option>
-            <option value="EUR">Real para Euro</option>
+            <option value="EUR">Euro para Real</option>
           </select>
 
           <div className="separator">Valor para convenção</div>
@@ -62,11 +62,9 @@ export const NewExchangeRate = ({
             <Button text="Começar de novo" onClick={handleClean} />
           )}
 
-          {!!result && (
-            <span>Total: {customFormatCurrency(currencySelected, result)}</span>
-          )}
-        </S.Section>
-      </S.Container>
+          {!!result && <span>Total: {currentBRL(result)}</span>}
+        </Section>
+      </Container>
     </ReactModal>
   );
 };
