@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import Modal from 'react-modal';
-
 import { Button } from './components/Button';
 import { Cards } from './components/Cards';
 import { Header } from './components/Header';
 import { NewExchangeRate } from './components/NewExchangeRate';
 
 import { Container } from './styles/global';
-
-Modal.setAppElement('#root');
 
 export const App = () => {
   const [modalIsOpen, setIsOpen] = useState(false);

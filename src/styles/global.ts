@@ -97,35 +97,4 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  button {
-    width: 100%;
-    max-width: 320px;
-
-    padding: 1rem 2rem;
-    background: var(--green);
-    color: var(--text-dark);
-
-    font-size: 1.2rem;
-    font-weight: bold;
-
-    border: none;
-
-    margin-top: 1rem;
-    border-radius: 2rem;
-    margin-left: auto;
-
-    transition: filter 0.3s;
-
-    &:hover {
-      filter: brightness(0.9);
-    }
-  }
-
-  @media (max-width: 550px) {
-    button {
-      max-width: none;
-      width: 100%;
-    }
-  }
 `;
