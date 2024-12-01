@@ -31,7 +31,7 @@ export const useNewExchangeRate = () => {
     }
 
     const { data } = await api.get(`/${currencySelected}`);
-    console.log(currencySelected);
+
     const currency = `${currencySelected}BRL`;
 
     const result = amount * parseFloat(data[currency].ask);

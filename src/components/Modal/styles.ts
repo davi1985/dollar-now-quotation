@@ -70,15 +70,16 @@ export const Footer = styled.footer`
   }
 `;
 
-export const CloseBtn = styled.button`
+export const CloseBtn = styled.span`
   border: none;
   background: #fefefe;
-  width: 20px;
-  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
   color: #121214;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
+  cursor: pointer;
 `;

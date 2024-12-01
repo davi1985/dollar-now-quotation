@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+
   h2 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -53,8 +54,7 @@ export const Section = styled.section`
     }
   }
 
-  input,
-  button {
+  input {
     border-radius: 0.25rem;
     padding: 1rem;
     border: none;
@@ -72,19 +72,6 @@ export const Section = styled.section`
     font-weight: 400;
   }
 
-  button {
-    margin-top: 1rem;
-    background: var(--green);
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    transition: filter 0.3s;
-
-    &:hover {
-      filter: brightness(0.9);
-    }
-  }
-
   span {
     border-radius: 0.25rem;
     padding: 1rem;
@@ -96,5 +83,35 @@ export const Section = styled.section`
     margin-top: 1rem;
     text-align: center;
     opacity: 1;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+`;
+
+export const ButtonCalc = styled.button`
+  margin-top: 1rem;
+  background: #33cc95;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: filter 0.3s;
+  padding: 1rem;
+  border: none;
+  border-radius: 100000px;
+  width: 100%;
+`;
+
+export const ButtonRestart = styled.button`
+  margin-top: 1rem;
+  background: transparent;
+  margin-left: auto;
+  padding: 1rem;
+  border: none;
+  text-decoration: underline;
+
+  &:hover {
+    filter: brightness(0.9);
   }
 `;

@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 
-import { ReactPortal } from '../ReactPortal';
-
 import { CloseBtn, Container, Overlay } from './styles';
 
 type ModalProps = {
@@ -12,14 +10,12 @@ type ModalProps = {
 
 export const Modal = ({ visibility, children, onClose }: ModalProps) =>
   visibility ? (
-    <ReactPortal containerId={'modal-root'}>
-      <Overlay>
-        <Container>
-          <div className="modal-body">
-            <CloseBtn onClick={onClose}>X</CloseBtn>
-            {children}
-          </div>
-        </Container>
-      </Overlay>
-    </ReactPortal>
+    <Overlay>
+      <Container>
+        <div className="modal-body">
+          <CloseBtn onClick={onClose}>X</CloseBtn>
+          {children}
+        </div>
+      </Container>
+    </Overlay>
   ) : null;

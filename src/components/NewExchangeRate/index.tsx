@@ -1,11 +1,13 @@
-import ReactModal from 'react-modal';
-
 import { currentBRL } from '../../utils/utils';
 import { NewExchangeRateProps } from './types';
 
-import { Button } from '../Button';
-
-import { Section, Container } from './styles';
+import {
+  Section,
+  Container,
+  ButtonContainer,
+  ButtonRestart,
+  ButtonCalc,
+} from './styles';
 import { useNewExchangeRate } from './useNewExchangeRate';
 import { Modal } from '../Modal';
 export const NewExchangeRate = ({
@@ -50,11 +52,15 @@ export const NewExchangeRate = ({
             placeholder="Digite o valor para convenção."
           />
 
-          {!result ? (
-            <Button text="Calcular" onClick={handleCalculate} />
-          ) : (
-            <Button text="Começar de novo" onClick={handleClean} />
-          )}
+          <ButtonContainer>
+            {!result ? (
+              <ButtonCalc onClick={handleCalculate}>Calcular</ButtonCalc>
+            ) : (
+              <ButtonRestart onClick={handleClean}>
+                Começar de novo
+              </ButtonRestart>
+            )}
+          </ButtonContainer>
 
           {!!result && <span>Total: {currentBRL(result)}</span>}
         </Section>
