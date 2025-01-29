@@ -1,27 +1,19 @@
-import { useState } from 'react';
-import { Button } from './components/Button';
-import { Cards } from './components/Cards';
-import { Header } from './components/Header';
-import { NewExchangeRate } from './components/NewExchangeRate';
+import { Button } from './commons/components/Button';
+import { Header } from './commons/components/Header';
 
-import { Container } from './styles/global';
+import { Container } from './commons/styles/global';
+import { ExchangeRateView } from './features/exchange-rate/views/exchange-rate/exchange-rate.view';
+import { NewExchangeRate } from './features/exchange-rate/views/new-exchange-rate/new-exchange-rate.view';
+import { useApp } from './useApp';
 
 export const App = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+  const { openModal, modalIsOpen, closeModal } = useApp();
 
   return (
     <Container>
       <Header />
 
-      <Cards />
+      <ExchangeRateView />
 
       <Button text="Calcular convenção" onClick={openModal} />
 

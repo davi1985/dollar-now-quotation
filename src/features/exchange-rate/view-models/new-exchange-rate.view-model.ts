@@ -1,8 +1,11 @@
+import { ExchangeRateServiceProtocol } from '@/features/exchange-rate/services/protocols';
 import { ChangeEvent, useState } from 'react';
-import { useCustomToast } from '../../hooks/useCustomToast';
-import { api } from '../../services/api';
+import { useCustomToast } from '@/commons/hooks/useCustomToast';
+import { ExchangeRateMapper } from '@/features/exchange-rate/mappers/exchange.mapper';
 
-export const useNewExchangeRate = () => {
+type Props = { service: ExchangeRateServiceProtocol };
+
+export const useNewExchangeRateViewModel = ({ service }: Props) => {
   const [currencySelected, setCurrencySelected] = useState('');
   const [amount, setAmount] = useState<number>(0);
   const [result, setResult] = useState<number>(0);
@@ -30,13 +33,16 @@ export const useNewExchangeRate = () => {
       });
     }
 
-    const { data } = await api.get(`/${currencySelected}`);
+    const response = await service.getCurrentExchangeRate({
+      currencySelected,
+    });
 
-    const currency = `${currencySelected}BRL`;
+    const { currency } = ExchangeRateMapper.toModel({
+      currencySelected,
+      data: response,
+    });
 
-    const result = amount * parseFloat(data[currency].ask);
-
-    setResult(result);
+    setResult(amount * currency);
   };
 
   const handleClean = () => {

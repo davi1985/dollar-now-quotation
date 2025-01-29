@@ -1,5 +1,5 @@
-import { currentBRL } from '../../utils/utils';
-import { NewExchangeRateProps } from './types';
+import { currentBRL } from '../../../../commons/utils/utils';
+import { Props } from './types';
 
 import {
   Section,
@@ -8,12 +8,12 @@ import {
   ButtonRestart,
   ButtonCalc,
 } from './styles';
-import { useNewExchangeRate } from './useNewExchangeRate';
-import { Modal } from '../Modal';
-export const NewExchangeRate = ({
-  isOpen,
-  onRequestClose,
-}: NewExchangeRateProps) => {
+
+import { Modal } from '@/commons/components/Modal';
+import { ExchangeRateService } from '@/features/exchange-rate/services/exchange-rate.service';
+import { HttpClient } from '@/infra/http-client';
+import { useNewExchangeRateViewModel } from '../../view-models/new-exchange-rate.view-model';
+export const NewExchangeRate = ({ isOpen, onRequestClose }: Props) => {
   const {
     amount,
     result,
@@ -22,7 +22,9 @@ export const NewExchangeRate = ({
     handleCalculate,
     currencySelected,
     handleSelectCurrency,
-  } = useNewExchangeRate();
+  } = useNewExchangeRateViewModel({
+    service: new ExchangeRateService(HttpClient.create()),
+  });
 
   return (
     <Modal visibility={isOpen} onClose={onRequestClose}>
